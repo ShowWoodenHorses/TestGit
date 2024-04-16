@@ -7,5 +7,6 @@ public class GameplayMonoInstailer : MonoInstaller
     {
         Container.Bind<IInputSystem>().To<DesktopMovement>().AsSingle();
         Container.Bind<MovementHandler>().AsSingle();
+        Container.Bind<RotateHandler>().AsSingle();
     }
 }

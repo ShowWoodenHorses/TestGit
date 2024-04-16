@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 
-public class RotateHandler : MonoBehaviour
+public class RotateHandler
 {
-    private void Update()
-    {
-        if (Mathf.Abs(transform.position.x) > 0.1f)
-        {
-            Quaternion.Euler(0f, 0f, 90f);
-        }
-    }
+    public void RotateUp(Transform transform) =>
+            transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, 0f);
+    public void RotateDown(Transform transform) =>
+            transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, 180f);
+    public void RotateLeft(Transform transform) =>
+            transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, 90f);
+    public void RotateRight(Transform transform) =>
+            transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, -90f);
 }
